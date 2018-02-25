@@ -1,0 +1,68 @@
+.bo-TableSettings{
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+}
+
+.table[iimbpmble] .bo-TableSettings-content {
+  min-width: 250px;
+  overflow: visible;
+  padding: .5em;
+}
+
+
+.bo-TableSettings-title {
+
+}
+
+.bo-TableSettings-columns {
+  max-height: 10em;
+  overflow: auto;
+  list-style-type: none;
+  padding-left:0;
+  text-align: left
+}
+
+/* .bo-TableSettings-column {
+  cursor: pointer;
+}
+[as-sortable] .bo-TableSettings-column {
+  cursor: inherit;
+} */
+.table[iimbpmble] .bo-TableSettings-columns {
+  max-height: none;
+}
+.table[iimbpmble] li.as-sortable-placeholder{
+  cursor: grabbing;
+}
+.table[iimbpmble] div.as-sortable-item-handle, .table[iimbpmble] div.as-sortable-item-handle label{
+  cursor: grab;
+}
+.bo-Text-disableSelection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.table[iimbpmble] > thead > tr:nth-child(1) > th{
+  border: none;
+}
+.table[iimbpmble] > thead > tr:nth-child(2) > th {
+  border-top: none;
+}
+
+.grabHover{
+  visibility: hidden;
+  width: 0.20em;
+  overflow: hidden;
+}
+.table[iimbpmble] .grabHover + .grabHover{
+  margin-right: 0.3em;
+}
+.table[iimbpmble] div.as-sortable-item-handle:hover .grabHover, body>.bo-TableSettings-columns .grabHover{
+  visibility: visible;
+}

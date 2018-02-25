@@ -1,0 +1,24 @@
+.bo-SortButton {
+  border: none;
+  background-color: transparent;
+  min-width: 100%;
+  text-align: inherit;
+  padding:1px 0;
+  text-transform: none !important;
+}
+.bo-SortButton-icon {
+  visibility:hidden;
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 0.6em;
+}
+
+.bo-SortButton--active .bo-SortButton-icon,
+.bo-SortButton:hover .bo-SortButton-icon {
+  visibility: visible;
+}
+
+.bo-SortButton-label {
+  margin-right:.3em;
+}

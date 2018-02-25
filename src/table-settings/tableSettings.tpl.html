@@ -1,0 +1,42 @@
+<div class="bo-TableSettings pull-right" dropdown>
+  <button dropdown-toggle type="button"
+    id="aria-tablesettings"
+    class="btn btn-default bo-Settings dropdown-toggle"
+    title="{{'Table settings' | translate}}"
+    ng-disabled="tasks.length === 0"
+    aria-labelledby="aria-tablesettings">
+    <i class="glyphicon glyphicon-cog"></i>
+    <span class="sr-only">{{'Table settings' | translate}}</span>
+  </button>
+
+  <div class="bo-TableSettings-content dropdown-menu pull-right" role="menu" aria-labelledby="aria-tablesettings">
+    <h5 class="bo-TableSettings-title" >{{'Items per page'| translate}}</h5>
+    <div class="btn-group btn-group-justified" role="group">
+      <div class="btn-group" role="group" ng-repeat="size in sizes">
+        <button class="btn btn-default"
+          type="button"
+          ng-model="$parent.pageSize" btn-radio="{{::size}}"
+          ng-click="updatePageSize({size:size})" tabindex="0">
+          {{size}}
+        </button>
+      </div>
+    </div>
+
+    <h5 class="bo-TableSettings-title" >{{'Columns selection' | translate}}</h5>
+    <ul class="bo-TableSettings-columns bo-Text-disableSelection" as-sortable="sortableOptions" ng-model="columns">
+      <li  ng-repeat="field in columns" as-sortable-item>
+      <div as-sortable-item-handle ng>
+      <label
+        class="bo-TableSettings-column"
+        title="{{((field.visible ? 'Hide' : 'Show') +' '+ field[label]) | translate}}"
+        ng-click="$event.stopPropagation()">
+        <span class="glyphicon glyphicon-align-justify grabHover"></span>
+        <span class="glyphicon glyphicon-align-justify grabHover"></span>
+        <input type="checkbox" ng-model="field[visible]" ng-change="updateVisibility({field:field})">
+        {{::field[label]}}
+      </label>
+      </div>
+      </li>
+    </ul>
+  </div>
+</div>
